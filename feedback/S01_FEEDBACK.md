@@ -1,67 +1,62 @@
 # Rétroaction automatisée -- S01 (L'IA générative et l'ère agentique : orchestrer des experts sans en être un)
 
-_Générée le 2026-05-28T20:23:05+00:00 -- Run `20260528T200936Z-acdfcf6a`_
+_Générée le 2026-05-28T20:54:58+00:00 -- Run `20260528T204526Z-4170164e`_
 
-Ce document est produit par un pipeline reproductible (vérification SQL déterministe + analyse LLM du brief et de la déclaration IA). Une revue humaine précède toujours sa publication. **À ce stade expérimental, aucune note ni étiquette de niveau n'est diffusée : l'objectif est purement formatif.**
+Ce document est produit par un pipeline reproductible (validation automatique du livrable + analyse LLM du brief et de la déclaration IA). Une revue humaine précède toujours sa publication. **À ce stade expérimental, aucune note ni étiquette de niveau n'est diffusée : l'objectif est purement formatif.**
 
 ---
 
-## 1. Vérification automatique de la requête SQL
+## 1. Rétroaction pédagogique sur le brief
 
-La vérification automatique n'a pas pu être réalisée (gate non applicable (type=text_artifact, must_run=False)).
-
-
-## 2. Rétroaction pédagogique sur le brief
-
-> Le document soumis est le gabarit de la fiche sans aucune réponse remplie, ce qui empêche d'évaluer les dimensions demandées. Remplissez chaque section avec des éléments exécutifs, chiffrés et des mitigations concrètes pour obtenir une évaluation utile.
+> Le document soumis est le gabarit non rempli : les sections attendues (problème d'affaires, rôle, valeur, risques, conditions de succès, etc.) sont absentes. Remplissez chaque section avec des éléments concrets et chiffrés en langage exécutif pour obtenir une évaluation positive.
 
 ### Observations par dimension
 
 **Contexte organisationnel**
-- Observation : Le fichier ne contient que le modèle de fiche et des consignes, sans aucun contexte organisationnel rempli (PME ou grande entreprise absent).
-- Piste d'amélioration : Fournir pour chaque profil (PME vs grande entreprise) la taille, le secteur et une estimation de budget, puis expliquer comment la recommandation diffère entre eux.
+- Observation : Le document soumis est un modèle vierge contenant seulement l'invite et les champs à remplir, sans description du contexte organisationnel.
+- Piste d'amélioration : Remplissez le champ en précisant pour chaque contexte (PME vs grande entreprise) la taille, le secteur et un ordre de grandeur de budget, puis expliquez en une phrase pourquoi la recommandation diffère.
 
 **Justification criteres**
-- Observation : La grille de justification est absente : le document contient uniquement des champs vides à remplir pour les questions demandées.
-- Piste d'amélioration : Remplir la grille en justifiant chaque score par des données ou hypothèses vérifiables pour les quatre critères (impact, faisabilité, risque, coût).
+- Observation : La fiche est vierge : aucune grille ni justification des critères (impact, faisabilité, risque, coût) n'est fournie.
+- Piste d'amélioration : Complétez une grille pour les trois agents en justifiant chaque cellule avec des données ou hypothèses vérifiables pour les quatre critères.
 
 **Role specialise identifie**
-- Observation : Le document donne un intitulé de champ 'Role specialise que l'agent orchestre' sans nommer de rôle précis ni valeur métier.
-- Piste d'amélioration : Nommer précisément le rôle métier (ex. « analyste crédit ») et décrire en langage métier la valeur créée, avec un exemple concret.
+- Observation : Le fichier ne contient que le formulaire à remplir et n'identifie aucun rôle spécialisé pour les agents.
+- Piste d'amélioration : Nommer précisément le rôle métier orchestré par chaque agent (ex. « analyste crédit ») et décrire en termes métier la valeur générée.
 
 **Recommandation argumentee**
-- Observation : Aucune recommandation n'est fournie dans le modèle: seules les instructions demandent une recommandation sans contenu effectif.
-- Piste d'amélioration : Formuler une recommandation distincte par contexte, expliquer les compromis et justifier pourquoi les autres options sont écartées.
+- Observation : Aucune recommandation finale n'est fournie dans le document, seulement les consignes pour la remplir.
+- Piste d'amélioration : Formulez une recommandation distincte par contexte, en expliquant pourquoi les autres options ont été écartées en termes de compromis valeur/risque.
 
 **Role specialise**
-- Observation : Le champ prévu pour le rôle spécialisé est vide; aucun lien avec un expert humain stratégique n'est explicité.
-- Piste d'amélioration : Identifier quel expert humain est remplacé ou augmenté par l'agent et expliquer pourquoi ce rôle est stratégique pour l'organisation choisie.
+- Observation : Le document est un gabarit sans indication sur quel expert humain serait remplacé ou augmenté par l'agent.
+- Piste d'amélioration : Précisez quel expert humain est remplacé/augmenté (ex. : analyste crédit) et expliquez pourquoi ce rôle est stratégique pour l'organisation choisie.
 
 **Probleme affaires**
-- Observation : La section 'Probleme d'affaires resolu' n'est pas remplie : le document ne formule pas le problème en langage exécutif.
-- Piste d'amélioration : Rédiger en 1–2 phrases le problème métier spécifique (avec un chiffre ou contexte concret) pour le cas choisi.
+- Observation : La section « Problème d'affaires » est restée vide : le fichier ne contient que la consigne de deux à trois phrases.
+- Piste d'amélioration : Décrivez en 1–2 phrases, en langage exécutif et avec un chiffre ou exemple concret, le problème spécifique que l'organisation cherchait à résoudre.
 
 **Valeur creee**
-- Observation : La section 'Valeur creee' est laissée vide; aucune donnée publique ou quantification n'est fournie.
-- Piste d'amélioration : Intégrer des chiffres publics ou estimations plausibles (ex. % réduction, nombre d'ETP) et relier explicitement ces chiffres au rôle de l'agent.
+- Observation : La section « Valeur créée » n'est pas remplie ; le document ne donne aucun chiffre issu de sources publiques.
+- Piste d'amélioration : Indiquez une valeur mesurable (chiffre public ou ordre de grandeur) et liez-la explicitement au rôle orchestré par l'agent.
 
 **Risque mitigation**
-- Observation : Le modèle inclut un intitulé pour risques/mitigation mais ne contient aucune identification de risque ni mesure concrète.
-- Piste d'amélioration : Nommer le risque principal pour le cas choisi (ex. biais, fuite de données) et proposer une mitigation actionnable et précise (audit, clause contractuelle, etc.).
+- Observation : La fiche contient seulement l'invite pour décrire le risque et la mitigation, sans contenu effectif.
+- Piste d'amélioration : Identifiez le risque principal lié au cas choisi et proposez une mitigation concrète et actionnable (ex. : audit, clause contractuelle, chiffrement).
 
 **Condition succes**
-- Observation : La 'Condition de succes' demandée n'est pas renseignée dans le document fourni.
-- Piste d'amélioration : Formuler une condition de succès spécifique à l'organisation (indicateur mesurable et horizon temporel, ex. adoption > 80% en 6 mois).
+- Observation : La section dédiée aux conditions de succès est vide : seules les instructions pour la remplir apparaissent.
+- Piste d'amélioration : Formulez une condition de succès observable et vérifiable (ex. : taux d'adoption > 80 % en 6 mois) adaptée à l'organisation ciblée.
 
 **Ai disclosure**
-- Observation : Le rappel demande de mettre à jour ai-usage.md mais le dépôt n'est pas fourni et aucun usage d'IA n'est documenté dans le texte remis.
-- Piste d'amélioration : Ajouter un fichier ai-usage.md indiquant les outils (ou 'aucun'), l'étape d'utilisation, la validation humaine et les limites observées.
+- Observation : Le rappel d'ai-usage.md figure dans le template mais aucun fichier ou indication d'utilisation d'IA n'est fourni dans le brief soumis.
+- Piste d'amélioration : Ajoutez un ai-usage.md indiquant les outils (ou « aucun »), l'étape d'utilisation, la validation humaine réalisée et les limites observées.
 
-_Quelques points appellent une attention particulière lors de la prochaine itération : template_non_rempli._
+_Quelques points appellent une attention particulière lors de la prochaine itération : brief_non_rempli._
 
-## 3. Déclaration d'utilisation de l'IA
+## 2. Déclaration d'utilisation de l'IA
 
-> Le fichier soumis est le gabarit vierge et ne contient pas d'informations spécifiques sur l'utilisation d'IA. Remplissez chaque section avec des détails concrets (outil + version, étape précise, validation humaine, limites observées) avant de soumettre à nouveau.
+> La déclaration fournie est le modèle non rempli et ne renseigne aucune des informations demandées. Veuillez compléter chaque section avec des informations spécifiques (outil + version, étape d'utilisation, vérification humaine, et limites observées).
 
 **Sujets à ajouter ou expliciter pour la prochaine itération :**
 
@@ -70,23 +65,23 @@ _Quelques points appellent une attention particulière lors de la prochaine ité
 - comment la sortie a été validée par l'humain
 - limites ou erreurs observées
 
-## 4. Pistes d'action pour la prochaine itération
+## 3. Pistes d'action pour la prochaine itération
 
-- Réviser le brief en tenant compte des observations par dimension de la section 2.
-- Compléter `ai-usage.md` en y ajoutant : outils utilisés (nom + version/modèle).
-- Compléter `ai-usage.md` en y ajoutant : à quelle étape l'IA a été utilisée.
-- Compléter `ai-usage.md` en y ajoutant : comment la sortie a été validée par l'humain.
-- Compléter `ai-usage.md` en y ajoutant : limites ou erreurs observées.
+- Réviser le brief en tenant compte des observations par dimension de la section 1.
+- Compléter i-usage.md en y ajoutant : outils utilisés (nom + version/modèle).
+- Compléter i-usage.md en y ajoutant : à quelle étape l'IA a été utilisée.
+- Compléter i-usage.md en y ajoutant : comment la sortie a été validée par l'humain.
+- Compléter i-usage.md en y ajoutant : limites ou erreurs observées.
 
 ---
 
-## 5. Traçabilité
+## 4. Traçabilité
 
-- **Run ID :** `20260528T200936Z-acdfcf6a`
+- **Run ID :** `20260528T204526Z-4170164e`
 - **Devoir :** `S01`
 - **Étudiant·e :** `KlervieLB`
-- **Commit analysé :** `6ed853a`
-- **Audit (côté instructeur) :** `tools/instructor/feedback_pipeline/audit/20260528T200936Z-acdfcf6a/KlervieLB/`
+- **Commit analysé :** `d041809`
+- **Audit (côté instructeur) :** `tools/instructor/feedback_pipeline/audit/20260528T204526Z-4170164e/KlervieLB/`
 - **Prompts (SHA-256) :**
   - `rubric_grader_system` : `505f32d1d8319d66...`
   - `ai_usage_grader_system` : `81cb7fdf89bda55a...`
