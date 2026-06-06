@@ -1,9 +1,9 @@
 # M2 — Mémo exécutif de recommandation IA
 
-**Étudiant·e** : [votre identifiant GitHub]  
-**Équipe** : [identifiants GitHub des autres membres]  
+**Étudiant·e** : KlervieLB ou Klervie LE BAYON  
+**Équipe** : Lafa7183, Abdi23, Fka2026, Vincentl-uds 
 **Spécialisation d'équipe** : Conformité KYC  
-**Cas retenu (L3)** : [identifiant GitHub de l'auteur·e] — « Agent IA de pré-vérification des dossiers KYC »  
+**Cas retenu (L3)** : « Agent IA de pré-vérification des dossiers KYC »  
 **Séance** : S04 — Atelier d'intégration : diagnostic et recommandation IA  
 **Date limite** : remis pendant la séance S04, avant la présentation au DG
 
@@ -12,7 +12,7 @@
 ## En-tête du mémo
 
 **À :** Directeur général, FinServ Québec  
-**De :** [votre nom] · équipe : [membres listés en en-tête]  
+**De :** Klervie LE BAYON · équipe : [membres listés en en-tête]  
 **Objet :** Recommandation de premier déploiement d'agent IA  
 **Date :** 3 juin 2026  
 **Confidentialité :** Usage interne uniquement
@@ -112,12 +112,9 @@ Si les seuils sont atteints, nous recommandons de poursuivre vers un pilote cont
 
 ## Annexes (hors limite d'une page)
 
-- **Annexe A** : Fiche d’opportunité agentique (`portfolio/S01_fiche_opportunite_agentique.md`)  
-- **Annexe B** : Grille de sélection d'agents (`portfolio/M1_grille_selection_agents.md`)  
+- **Annexe A** : Fiche d’opportunité agentique (`portfolio/S01_fiche_opportunite_agentique_Finserv.md`)  
+- **Annexe B** : Grille de sélection d'agents (`portfolio/M1_grille_selection_agents_Finserv.md`)  
 - **Annexe C** : Canevas de cas d’usage (`portfolio/L3_canevas_cas_usage_FinServ.md`)
 
 Les annexes complètes sont documentées dans le fichier source `portfolio/Source annexe`.
 
----
-
-*Divulgation IA : si des outils d'IA ont aidé à la rédaction de ce mémo, déclarez-les dans `ai-usage.md`.*
