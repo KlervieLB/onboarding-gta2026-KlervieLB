@@ -1,7 +1,7 @@
 # S01 — Fiche d’opportunité agentique
 
-**Étudiant·e** : Fka2026  
-**Équipe** : klervielb, abdi23, lafa7183, vincentl-uds  
+**Étudiant·e** : klervielb   
+**Équipe** : Fka2026 , abdi23, lafa7183, vincentl-uds  
 **Spécialisation d’équipe** : Conformité KYC  
 **Séance** : S04 — Atelier d’intégration : diagnostic et recommandation IA  
 **Date** : 3 juin 2026
