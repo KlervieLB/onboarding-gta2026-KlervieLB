@@ -12,7 +12,8 @@
 ## En-tête du mémo
 
 **À :** Directeur général, FinServ Québec  
-**De :** Klervie LE BAYON · équipe : Lafa7183, Abdi23, Fka2026, Vincentl-uds 
+**De :** Klervie LE BAYON · équipe : Lafa7183, Abdi23, Fka2026, Vincentl-uds
+
 **Objet :** Recommandation de premier déploiement d'agent IA  
 **Date :** 3 juin 2026  
 **Confidentialité :** Usage interne uniquement
