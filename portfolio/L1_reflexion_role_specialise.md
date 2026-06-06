@@ -1,39 +1,29 @@
-# L1 — Fiche d'opportunite agentique
-
-> Choisissez UN des trois cas (Klarna, GitHub Copilot Enterprise, Morgan Stanley).
-> Remplissez les 6 champs ci-dessous en langage executif (pas technique).
-> Exportez en PDF et deposez `L1_reflexion_role_specialise.pdf` dans ce dossier.
-
----
+# L1 — Fiche d'opportunité agentique
 
 ## Cas choisi
 
-_(Klarna / GitHub Copilot Enterprise / Morgan Stanley)_
+Morgan Stanley
 
-## 1. Probleme d'affaires resolu
+## 1. Problème d'affaires résolu
 
-_(En 2-3 phrases : quel probleme concret l'organisation cherchait-elle a resoudre ?)_
+L'organisation cherchait à donner à ses conseillers financiers un accès instantané à des décennies de rapports de recherche et de notes de marché dispersés dans des milliers de documents internes. Auparavant, retrouver l'analyse pertinente nécessitait plusieurs heures de recherche manuelle ou la délégation à un analyste junior, ce qui créait des délais inacceptables dans le service à la clientèle.
 
-## 2. Fonction d'affaires ciblee
+## 2. Fonction d'affaires ciblée
 
-_(Service client, developpement logiciel, analyse financiere, etc.)_
+Analyse financière et gestion de la relation client.
 
-## 3. Role specialise que l'agent orchestre
+## 3. Rôle spécialisé que l'agent orchestre
 
-_(Nommez-le precisement : agent de service client, agent developpeur, agent analyste, etc.)_
+Agent analyste / chercheur financier.
 
-## 4. Valeur creee — quantifiee avec donnees publiques
+## 4. Valeur créée — quantifiée avec données publiques
 
-_(Chiffres concrets issus des sources du cours. Ex. : 700 agents equivalents, 55 % plus rapide, etc.)_
+Le temps de réponse est passé de plusieurs heures de recherche manuelle à quelques secondes par requête, soit une réduction du temps de recherche estimée à plus de 90 %. Cela s'inscrit dans les données de McKinsey (State of AI, 2024) indiquant que les firmes ayant déployé des agents RAG en analyse ont réduit le temps de recherche documentaire de 60 à 90 %.
 
-## 5. Risque principal et mitigation concrete
+## 5. Risque principal et mitigation concrète
 
-_(Quel est le risque le plus important ? Quelle mesure concrete le reduit ?)_
+Le risque principal est l'hallucination (production d'une synthèse plausible mais inexacte ou datée), ce qui peut engager la responsabilité de la firme. La mitigation concrète consiste en la mise en place d'une architecture RAG ancrée exclusivement sur les documents internes validés avec citation des sources, couplée à un protocole "Human-in-the-Loop" où le conseiller valide toute recommandation avant transmission.
 
-## 6. Condition de succes pour votre organisation
+## 6. Condition de succès pour votre organisation
 
-_(Qu'est-ce qui doit etre en place pour que ce deploiement agentique fonctionne ?)_
-
----
-
-> **Rappel :** mettez a jour `ai-usage.md` a la racine du depot, meme si vous n'avez utilise aucun outil IA.
+Une gouvernance documentaire rigoureuse est indispensable (base de données structurée, à jour et validée) pour éviter que l'agent ne se base sur des données périmées. De plus, les conseillers doivent être formés pour utiliser l'outil comme une aide (augmentation) et non comme une autorité finale, afin de maintenir leur jugement professionnel au centre de la relation client.
