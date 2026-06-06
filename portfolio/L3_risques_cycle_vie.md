@@ -1,6 +1,6 @@
 # L3 — Risques du cycle de vie d'un agent IA
 
-**Étudiant·e** : <!-- votre identifiant GitHub -->  
+**Étudiant·e** : Klervie LE BAYON
 **Séance** : S03 — Déployer et gérer un agent IA  
 **Date limite** : avant le début de S04
 
