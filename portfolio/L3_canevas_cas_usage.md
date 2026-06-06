@@ -1,36 +1,36 @@
 # L3 — Canevas de cas d'usage IA
 
-**Étudiant·e** : [Ton identifiant GitHub / Nom]
+**Étudiant·e** : Klervie LE BAYON
 **Séance** : S03 — Du cas d'usage au déploiement : structurer un projet IA 
 
 ## Cas d'usage choisi
 
-**Secteur** : Finance (Institution financière canadienne).
-**Processus ciblé** : Analyse du risque de crédit pour les PME, incluant l'analyse des états financiers, le calcul des ratios et la génération d'une recommandation d'approbation ou de refus.
+**Secteur** : Finance / Services financiers.
+**Processus ciblé** : Analyse automatisée du risque de crédit aux PME.
 
 ---
 
 ## Section 1 — Problème d'affaires précis
 
-L'institution cherche à implanter un agent IA pour générer des gains de productivité et de temps dans l'analyse de crédit. Actuellement, les processus s'appuient sur des historiques de décisions de crédit qui reflètent les biais systémiques des analystes passés, ce qui expose l'institution à des risques réglementaires et à des pertes d'opportunités commerciales. De plus, une incapacité à adapter rapidement l'analyse lors de périodes de stress économique peut mener à l'augmentation du taux de défaut et à des pertes financières matérielles.
+Les analystes consacrent en moyenne 4 à 6 heures à l'évaluation manuelle d'un dossier (collecte, calcul de ratios, vérification, rédaction), ce qui entraîne des délais de décision de 5 à 10 jours ouvrables. Le coût de l'inaction se traduit par une perte de clients au profit de fintechs capables de répondre en quelques heures, une expérience client dégradée ainsi qu'un risque d'erreurs humaines dans les calculs de ratios.
 
 ---
 
-## Section 2 — Rôle spécialisé que l'agent orchestre ⭐
+## Section 2 — Rôle spécialisé que l'agent orchestre
 
-Agent d'analyse du risque de crédit PME.
+Analyste crédit senior spécialisé PME.
 
 ---
 
 ## Section 3 — Données nécessaires et disponibilité
 
-Le déploiement nécessite l'accès aux états financiers des PME et à l'historique des décisions de crédit de l'institution. Il faut également disposer de données macroéconomiques et de données d'entraînement rigoureusement validées pour assurer la représentation de différents secteurs, tailles d'entreprises (dont celles de moins de 3 ans), et minorités.
+Le déploiement s'appuie sur des données internes disponibles : les états financiers des demandeurs (PDF/numérique dans le CRM), l'historique des décisions de crédit sur 5 ans (base SQL) et les scores de bureaux de crédit (via API). Il nécessite également l'acquisition de données sectorielles de référence (Statistique Canada / BDC) et l'intégration de flux bancaires en temps réel via Open Banking dans le respect de la Loi 25.
 
 ---
 
 ## Section 4 — Solution IA proposée
 
-Un agent prédictif qui analyse les données financières pour générer des recommandations (approbation/refus). La solution est positionnée comme un outil d'augmentation, permettant à l'agent de gérer les dossiers répétitifs pendant que les analystes se concentrent sur les cas complexes. Elle intègre également un tableau de bord et un déclencheur automatique de révision humaine.
+Un agent LLM multimodal (ex. GPT-4o ou Claude Sonnet) combinant un OCR avec extraction structurée en JSON, un moteur de calcul de ratios déterministe par règles comptables et un système RAG basé sur les politiques de crédit internes. L'infrastructure cible est Azure OpenAI pour assurer l'hébergement canadien et la conformité SOC 2, opérant selon une architecture human-in-the-loop où l'analyste approuve la recommandation générée.
 
 ---
 
@@ -38,15 +38,17 @@ Un agent prédictif qui analyse les données financières pour générer des rec
 
 | Type | Métrique | Valeur cible |
 |---|---|---|
-| Technique | Taux de défaut à 90 jours des dossiers approuvés par l'agent. | Maintien sous un seuil prédéfini déclenchant la révision automatique. |
-| Affaires | Gains de temps individuels des analystes crédit. | Matérialisation démontrable de gains de productivité dès les premières semaines. |
+| Technique | Précision de la recommandation vs décision finale analyste | ≥ 85% |
+| Technique | Temps de traitement automatisé d'un dossier standard | < 15 min |
+| Affaires | Réduction du délai moyen de décision crédit | de 5 jours → 1 jour |
+| Affaires | Capacité de traitement mensuelle (dossiers / analyste) | +40% |
 
 ---
 
 ## Section 6 — Risques et mitigations
 
-**Risque principal** : L'utilisation de données d'entraînement non représentatives, ce qui amènerait l'agent à reproduire et amplifier des biais systémiques discriminatoires envers certains secteurs ou entreprises.
-**Mitigation** : Réaliser un audit de biais obligatoire sur les données historiques avant le POC, constituer un jeu de validation représentatif et instaurer une revue humaine systématique des refus automatisés pendant les 6 premiers mois.
+**Risque principal** : Erreur de classification crédit (faux positif) où l'agent approuve un dossier qui aurait dû être refusé en raison d'une mauvaise interprétation des états financiers ou de données sectorielles périmées.
+**Mitigation** : Maintien d'une validation humaine obligatoire pour tous les dossiers du POC, configuration d'un seuil de confiance minimal (≥90%) sous lequel le dossier est escaladé, et audit mensuel des dossiers approuvés face à leur performance réelle à 90 jours.
 
 ---
 
@@ -54,9 +56,8 @@ Un agent prédictif qui analyse les données financières pour générer des rec
 
 | Phase | Périmètre | Durée estimée |
 |---|---|---|
-| POC | Cadrage initial incluant l'audit de biais sur les données historiques et la création d'un jeu de validation. | 4 à 6 semaines |
-| Pilote | Intégration des analystes seniors comme co-concepteurs et mesure des gains de temps individuels. | 8 à 12 semaines |
-| Déploiement | Déploiement continu avec tableau de bord mensuel, révisions humaines sur déclencheur, et recalibrage semestriel. | En continu |
+| POC | Dossiers de renouvellement de crédit < 250 K$ (faible risque, données complètes, décision historique connue). | 6 semaines |
+| Pilote | Nouvelles demandes PME jusqu'à 1 M$ avec métriques formelles, gouvernance et formation des analystes. | 3 mois |
+| Déploiement | Ensemble du portefeuille PME avec catégorisation par niveau de risque et intégration CRM complète. | 6 mois |
 
-**Sponsor exécutif identifié** : Le CRO (Chief Risk Officer).
-
+**Sponsor exécutif identifié** : Directeur-trice des risques (Chief Risk Officer).
