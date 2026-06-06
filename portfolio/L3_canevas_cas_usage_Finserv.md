@@ -1,6 +1,6 @@
 # L3 — Canevas de cas d'usage IA — FinServ Québec
 
-**Étudiant·e** : Fka2026  
+**Étudiant·e** : Klervie LB  
 **Séance** : S04 — Atelier d’intégration : diagnostic et recommandation IA  
 **Date limite** : 3 juin 2026
 
