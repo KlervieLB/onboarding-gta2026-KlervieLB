@@ -1,7 +1,7 @@
 # M2 — Mémo exécutif de recommandation IA
 
-**Étudiant·e** : KlervieLB ou Klervie LE BAYON  
-**Équipe** : Lafa7183, Abdi23, Fka2026, Vincentl-uds 
+**Étudiant·e** : Klervie LE BAYON  
+**Équipe initiale** : Lafa7183, Abdi23, Fka2026, Vincentl-uds  
 **Spécialisation d'équipe** : Conformité KYC  
 **Cas retenu (L3)** : « Agent IA de pré-vérification des dossiers KYC »  
 **Séance** : S04 — Atelier d'intégration : diagnostic et recommandation IA  
@@ -12,8 +12,7 @@
 ## En-tête du mémo
 
 **À :** Directeur général, FinServ Québec  
-**De :** Klervie LE BAYON · équipe : Lafa7183, Abdi23, Fka2026, Vincentl-uds
-
+**De :** Klervie LE BAYON · équipe : Lafa7183, Abdi23, Fka2026, Vincentl-uds  
 **Objet :** Recommandation de premier déploiement d'agent IA  
 **Date :** 3 juin 2026  
 **Confidentialité :** Usage interne uniquement
@@ -22,59 +21,91 @@
 
 ## 1. Diagnostic — Rôle spécialisé recommandé
 
-Nous recommandons de déployer en premier un agent IA de pré-vérification des dossiers KYC, agissant comme analyste KYC junior augmenté. Cet agent ne prend pas de décision réglementaire ou financière seul. Il analyse les dossiers clients, vérifie la complétude des informations, détecte les pièces manquantes, résume les risques et prépare une recommandation pour l’analyste humain.
+Nous recommandons de déployer en priorité un agent IA de pré-vérification des dossiers KYC, positionné comme assistant de l’analyste conformité. Cet agent ne doit pas prendre de décisions réglementaires finales : il vérifie la complétude des dossiers, identifie les pièces manquantes, synthétise les risques et prépare une proposition de décision pour l’analyste humain.
 
-Ce choix est prioritaire pour FinServ Québec, car l’organisation compte 12 personnes en conformité, dont 4 analystes traitant environ 1 200 dossiers par mois avec un délai actuel de 3 jours. Dans un contexte où l’entreprise perd 3 à 4 clients par semaine depuis le lancement d’un agent IA concurrent chez Patrimoine Nexio, réduire les délais de traitement KYC devient un levier concret pour améliorer l’expérience client tout en respectant les contraintes AMF et Loi 25.
+Éléments clés :
+- 12 collaborateurs conformité.
+- 4 analystes traitent 1 200 dossiers par mois.
+- Délai actuel de pré-analyse : 3 jours.
+- Churn constaté : 3 à 4 clients perdus par semaine.
+- Dossiers standards : 70-80 % du flux.
+
+Enjeux prioritaires :
+- réduire le délai de pré-analyse,
+- renforcer la qualité des contrôles AMF,
+- limiter les pertes de clientèle liées au temps de traitement.
 
 ---
 
 ## 2. Solution recommandée
 
-Nous recommandons une solution SaaS spécialisée avec connecteur Salesforce natif, plutôt qu’un développement sur mesure. Le budget disponible de 300 K$ rend le SaaS réaliste, alors qu’un développement personnalisé coûterait minimalement 500 K$ à 800 K$ et prendrait environ 18 mois, ce qui est incompatible avec l’urgence du mandat.
+La recommandation porte sur une solution hybride : un agent IA intégré à Salesforce, appuyé par un cockpit de supervision humaine et une traçabilité renforcée.
 
-La solution devrait être basée sur une plateforme canadienne ou hébergée au Canada, intégrée à Salesforce CRM et capable de traiter les documents KYC partiellement numérisés. Une option réaliste serait une combinaison de Microsoft Copilot Studio / Azure OpenAI avec hébergement canadien, connectée à Salesforce, avec supervision humaine obligatoire. Cette approche limite la charge sur l’équipe TI, déjà à 110 % de capacité, tout en permettant un POC en environ 6 semaines.
+Ce choix est retenu parce qu’il combine :
+- rapidité de déploiement,
+- maîtrise réglementaire,
+- faible charge TI relative,
+- capacité à encadrer un POC mesurable.
 
-Le choix est justifié par trois critères : respect du budget, rapidité d’intégration grâce au connecteur Salesforce et conformité réglementaire plus facile à encadrer qu’une solution entièrement sur mesure.
+Le modèle retenu :
+- connecteur Salesforce natif,
+- hébergement Canada / Québec ou fournisseur certifié local,
+- supervision humaine obligatoire pour toute décision finale,
+- gestion différenciée des dossiers standards et des dossiers complexes.
+
+Cette approche est préférable à un développement 100 % interne, trop long et coûteux, et à une solution SaaS non structurée, moins contrôlable pour la conformité.
 
 ---
 
 ## 3. Budget et ROI estimé
 
-Budget proposé dans l’enveloppe de 300 K$ :
+Budget cible : 200 à 250 k$.
 
-- Coût de déploiement : environ 200 K$ à 250 K$
-- 80–120 K$ : licence SaaS et intégration Salesforce
-- 60–80 K$ : formation des analystes et conseillers
-- 60–80 K$ : tampon pour pilote, gouvernance, ajustements et conformité
+Répartition indicative :
+- 100-130 k$ : plateforme IA et intégration Salesforce.
+- 60-80 k$ : déploiement, tests et mise en production.
+- 40-50 k$ : formation, gouvernance et pilotage.
 
-Coût opérationnel annuel : environ 80 K$ à 120 K$ pour les licences, le support, les audits et l’amélioration continue.
+### ROI direct
 
-ROI estimé à 12 mois :
+Hypothèses :
+- 1 200 dossiers traités par mois.
+- gain de 15 à 20 minutes par dossier.
+- coût horaire moyen d’un analyste : 50 $.
 
-Hypothèse 1 : FinServ traite 1 200 dossiers KYC par mois.
+Résultats estimés :
+- 15 min × 1 200 = 300 h / mois → 15 000 $/ mois → 180 000$ / an.
+- 20 min × 1 200 = 400 h / mois → 20 000 $/ mois → 240 000$ / an.
 
-Hypothèse 2 : L’agent réduit le temps de préanalyse de 30 minutes à 10 minutes par dossier, soit un gain de 20 minutes par dossier.
+Le projet atteint un ROI direct proche du coût initial dès la première année.
 
-Hypothèse 3 : Le coût chargé moyen d’un analyste conformité est estimé à 50 $/heure.
+### Valeur de rétention client
 
-Calcul estimé :
-1 200 dossiers × 20 minutes économisées = 400 heures économisées par mois.  
-400 heures × 50 $ = 20 000 $ par mois.  
-20 000 $ × 12 mois = 240 000 $ de valeur annuelle estimée.
+Hypothèse de churn : 3,5 clients perdus par semaine.
+Valeur client moyenne : 15 000 $.
+Impact annuel estimé : 2,73 M$.
 
-À cela s’ajoute une valeur indirecte importante : réduction du délai de traitement de 3 jours à environ 1 jour, amélioration de l’expérience client et diminution du risque de perdre des clients au profit de concurrents plus rapides.
-
-ROI estimé : si le projet coûte 250 K$ et génère 240 K$ de valeur annuelle directe, le retour financier direct est presque atteint en 12 mois. En incluant la réduction des pertes clients, le projet devient rentable dès la première année.
+Cette valeur illustre que le gain financier réel dépasse largement les seuls gains de productivité, en valorisant la rétention et l’expérience client.
 
 ---
 
 ## 4. Contraintes réglementaires adressées
 
-La recommandation respecte les exigences de l’AMF, car l’agent IA ne prend aucune décision finale. Il peut analyser, résumer, détecter des anomalies et alerter, mais un analyste humain conserve la responsabilité de valider le dossier. La supervision humaine demeure donc obligatoire dans la boucle décisionnelle.
+Le dispositif respecte la posture AMF en maintenant l’humain comme décideur final. L’agent IA agit comme une aide à l’analyse, sans validation automatique finale.
 
-Pour la Loi 25, la solution doit prévoir un registre de traitement, une traçabilité des actions de l’agent, une justification des recommandations et un hébergement au Canada ou au Québec lorsque possible. Les données personnelles financières ne doivent pas être utilisées pour entraîner un modèle externe sans consentement explicite. L’agent doit aussi citer ses sources dans les dossiers KYC pour assurer transparence, auditabilité et responsabilité.
+Principes de conformité :
+- supervision humaine pour toute décision finale,
+- traçabilité de bout en bout des recommandations IA,
+- registre de traitement conforme Loi 25,
+- hébergement au Canada / Québec,
+- accès restreint selon les rôles.
 
-Les décisions de design découlant de ces contraintes sont donc les suivantes : humain dans la boucle, journalisation complète, accès limité selon les rôles, hébergement canadien, consentement documenté et interdiction de validation automatique finale.
+Mesures concrètes :
+- journalisation complète (acteur, action, résultat, horodatage),
+- comité de revue mensuel des cas limites,
+- escalade automatique pour les dossiers PEP, montants élevés ou juridictions sensibles.
+
+Ces mesures garantissent le respect des exigences AMF et de Loi 25 tout en permettant l’accélération des dossiers standards.
 
 ---
 
@@ -82,9 +113,9 @@ Les décisions de design découlant de ces contraintes sont donc les suivantes :
 
 | Phase | Contenu | Durée | Jalon de succès |
 |-------|---------|-------|-----------------|
-| Phase 1 — POC | Tester l’agent sur un sous-ensemble de 100 dossiers KYC standards provenant de Salesforce et de documents numérisés. Valider la capacité à détecter les pièces manquantes et à produire un résumé fiable. | 6 semaines | Réduction d’au moins 30 % du temps de préanalyse et précision minimale de 90 %. |
-| Phase 2 — Pilote | Déploiement auprès de 2 analystes conformité et 5 conseillers volontaires. Mesure de l’adoption, de la satisfaction et des écarts entre recommandations IA et validations humaines. | 2 à 3 mois | Satisfaction utilisateur ≥ 80 %, précision ≥ 95 % sur les cas standards, aucun incident de conformité. |
-| Phase 3 — Déploiement | Extension graduelle à toute l’équipe conformité. Formation, gouvernance active, tableau de bord de suivi, procédures d’escalade et audits mensuels. | 3 à 6 mois | Délai moyen KYC réduit de 3 jours à 1 jour et adoption par la majorité des analystes. |
+| Phase 1 — POC | Test sur 100 dossiers standards, intégration Salesforce, détection de pièces manquantes et synthèse de risques. | 6 semaines | Réduction de 30 % du temps de préanalyse et précision ≥ 90 %. |
+| Phase 2 — Pilote | Déploiement auprès de 2 analystes conformité et 5 conseillers volontaires. Évaluation de l’adoption, de la qualité des recommandations et de la conformité. | 2-3 mois | Satisfaction ≥ 80 %, précision ≥ 95 % sur les cas standards, aucun incident de conformité. |
+| Phase 3 — Déploiement | Extension progressive à l’ensemble de l’équipe conformité, gouvernance active, audits mensuels et tableau de bord. | 3-6 mois | Délai moyen KYC réduit à 1 jour et adoption majoritaire. |
 
 ---
 
@@ -92,30 +123,61 @@ Les décisions de design découlant de ces contraintes sont donc les suivantes :
 
 | Type | Métrique | Valeur cible |
 |------|----------|--------------|
-| Technique | Précision des détections de pièces manquantes et anomalies KYC | ≥ 95 % sur les cas standards |
-| Affaires | Délai moyen de traitement KYC | Réduction de 3 jours à 1 jour |
-| Conformité | Dossiers validés avec supervision humaine et traçabilité complète | 100 % des dossiers traités par l’agent |
+| Technique | Précision de détection des pièces manquantes et anomalies | ≥ 95 % |
+| Opérationnel | Délai moyen de préanalyse KYC | 1 jour |
+| Conformité | Dossiers validés avec supervision humaine | 100 % |
+| Commercial | Réduction du churn client | -30 % |
 
 ---
 
 ## 7. Clause go/no-go
 
-Nous recommandons une décision go/no-go à la fin du POC de 6 semaines. Le projet doit être arrêté ou réorienté si l’agent n’atteint pas un niveau minimal de performance opérationnelle et réglementaire.
+La décision de passer à la phase pilote doit être prise à l’issue du POC de 6 semaines.
 
-Indicateur : précision de l’agent sur la détection des pièces manquantes et anomalies KYC standards.  
-Seuil d'arrêt : précision inférieure à 90 % ou gain de temps inférieur à 15 %.  
-Date de décision : fin de la sixième semaine du POC.  
-Action si seuil non atteint : suspendre le déploiement, réduire le périmètre aux dossiers les plus simples, renforcer la qualité des données et refaire un POC limité avant tout pilote.
+Critères :
+- précision de détection ≥ 90 %,
+- gain de temps net ≥ 15 % par dossier,
+- exigence de gouvernance maintenue sans allongement du délai global.
 
-Si les seuils sont atteints, nous recommandons de poursuivre vers un pilote contrôlé avec 2 analystes et 5 conseillers volontaires.
+Si ces critères ne sont pas atteints, le projet devra être suspendu ou réorienté vers un périmètre plus restreint avec un nouveau POC.
+
+Si les critères sont atteints, lancement du pilote avec 2 analystes et 5 conseillers volontaires.
 
 ---
 
-## Annexes (hors limite d'une page)
+## 8. Architecture d'orchestration multi-agents et arbitrages humains
 
-- **Annexe A** : Fiche d’opportunité agentique (`portfolio/S01_fiche_opportunite_agentique_Finserv.md`)  
-- **Annexe B** : Grille de sélection d'agents (`portfolio/M1_grille_selection_agents_Finserv.md`)  
-- **Annexe C** : Canevas de cas d’usage (`portfolio/L3_canevas_cas_usage_FinServ.md`)
+Cette section documente l'infrastructure technique développée sous GitHub Codespaces et la manière dont le pilotage humain a configuré la décision stratégique pour FinServ Québec.
 
-Les annexes complètes sont documentées dans le fichier source `portfolio/Source annexe`.
+### (1) Faiblesses de la version d'équipe initiale corrigées
+Le travail initial réalisé avec mon équipe (Lafa7183, Abdi23, Fka2026, Vincentl-uds) a été audité et renforcé sur trois faiblesses majeures :
+1. **Absence de quantification financière (ROI) :** Le premier mémo se contentait de bénéfices qualitatifs ("réduire les coûts"). Cette orchestration a forcé l'intégration stricte des métriques opérationnelles du cas (4 ETP, 1 200 dossiers/mois).
+2. **Conformité déclarative non opérationnelle :** La version d'équipe demandait de "s'assurer de la conformité" de manière magique. L'orchestration actuelle l'opérationnalise par des barrières de code (Human-in-the-loop strict, journalisation).
+3. **Flou sur l'arbitrage technologique :** La première version n'expliquait pas l'exclusion d'un développement sur mesure. L'orchestration a permis d'évaluer rationnellement le modèle SaaS.
 
+### (2) Spécification technique de la séquence d'agents
+L'infrastructure visible dans notre dépôt Codespaces repose sur un script d'orchestration (`app_v2.py`) distribuant le travail de manière modulaire à travers des agents et des configurations de prompts isolés :
+Codespace Root
+├── agents/
+│   ├── diagnostic.py   --> Évalue le goulot d'étranglement (3 jours de délai)
+│   ├── options.py      --> Compare les approches de déploiement (SaaS vs Sur-mesure)
+│   ├── solution.py     --> Configure l'intégration Salesforce et l'architecture hybride
+│   ├── compliance.py   --> Injecte les contraintes AMF et Loi 25
+│   ├── finance.py      --> Calcule le ROI direct et la valeur de rétention client
+│   └── writer.py       --> Formate et assemble le mémo exécutif final
+├── prompts/
+│   └── [diagnostic/options/solution/compliance/finance/writer].txt
+├── config.py           --> Variables globales (300 K$ max, 1 200 dossiers, 4 ETP)
+└── app_v2.py           --> Point d'entrée de la pipeline avec points d'arrêt humains
+
+La séquence s'exécute de manière linéaire : `diagnostic` $\rightarrow$ `options` $\rightarrow$ `solution` $\rightarrow$ `compliance` $\rightarrow$ `finance` $\rightarrow$ `writer`. Chaque agent puise ses instructions métiers dans son fichier correspondant du dossier `/prompts`.
+
+### (3) Points de contrôle et arbitrages de l'humain dans la boucle (Checkpoints)
+Trois interventions humaines critiques ont été programmées dans `app_v2.py` pour rejeter ou modifier les comportements natifs de l'IA :
+* **Arbitrage 1 (Fichier : `agents/compliance.py`) :** L'agent de conformité cherchait initialement à optimiser la rapidité en autorisant une validation 100 % automatisée (sans intervention humaine) pour 70 % des dossiers jugés "standards". **J'ai rejeté cette sortie** pour imposer une barrière technique stricte conforme à l'AMF : l'IA ne fait que de la pré-vérification ; le clic de validation finale reste l'apanage exclusif de l'analyste.
+* **Arbitrage 2 (Fichier : `agents/finance.py`) :** L'agent financier calculait le ROI sur une pure logique de réduction de coûts en supprimant 2 postes d'analystes. **J'ai modifié cette hypothèse** dans le code pour réaffecter ces 2 ETP libérés vers la gestion des cas complexes et l'expérience client, transformant une logique de coupure budgétaire en levier de réduction du *churn* client (gain estimé de 2,73 M$).
+* **Arbitrage 3 (Fichier : `agents/options.py`) :** L'agent d'options penchait vers une infrastructure LLM sur mesure construite en interne. **J'ai forcé le paramètre** vers un connecteur SaaS natif (Salesforce Einstein) afin de respecter le budget maximal de 300 K$ imposé dans `config.py` (le sur-mesure consommant l'enveloppe dès la phase de POC).
+
+### (4) Angle créatif : L'agent comme "Tuteur de Conformité augmenté"
+Une IA seule conçoit l'automatisation comme un outil brut de productivité (extraire des données pour aller plus vite). L'angle créatif apporté à cette orchestration consiste à programmer l'agent pour qu'il agisse comme un **Tuteur de Conformité augmenté**. 
+Lorsqu'il détecte un document manquant ou une anomalie, l'agent ne se contente pas de lever un drapeau : il génère une note explicitative citant l'article de la Loi 25 ou la directive de l'AMF concernée. L'outil ne déqualifie pas le personnel de FinServ Québec ; au contraire, il devient un outil de formation continue automatisé permettant de faire monter rapidement en compétences les analystes juniors de l'organisation.
